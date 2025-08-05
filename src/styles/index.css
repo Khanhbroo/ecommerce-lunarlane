@@ -128,7 +128,7 @@ body {
   opacity: 1;
   transform: translateX(0);
 }
-.menu-container.closed {
+.menu-container.close {
   opacity: 0;
   transform: translateX(-100%);
 }
@@ -144,7 +144,6 @@ body {
 .header.scrolled {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  animation: fadeInDown 0.5s ease;
   z-index: 100;
 }
 

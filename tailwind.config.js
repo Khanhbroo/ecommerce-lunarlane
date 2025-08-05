@@ -9,9 +9,6 @@ export default {
         "red-gray": "#444444",
         "white-100": "#F3F3F3",
       },
-      fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-      },
     },
   },
   plugins: [],

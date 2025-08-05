@@ -38,16 +38,16 @@ const Badges = ({ color, children }) => {
 
 export { CustomNavLink, CustomLink, Badges };
 
+CustomLink.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
+};
 CustomNavLink.propTypes = {
-  href: PropTypes.isRequired,
-  className: PropTypes.isRequired,
-  children: PropTypes.isRequired,
+  href: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
 };
 Badges.propTypes = {
-  color: PropTypes.isRequired,
-  children: PropTypes.isRequired,
-};
-CustomLink.propTypes = {
-  className: PropTypes.isRequired,
-  children: PropTypes.isRequired,
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string.isRequired,
 };
