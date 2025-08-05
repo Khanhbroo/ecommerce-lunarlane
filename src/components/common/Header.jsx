@@ -9,10 +9,12 @@ import {
   IoSearchOutline,
 } from "react-icons/io5";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
   const menuRef = useRef(null);
 
   const toggleMenu = () => {
@@ -53,9 +55,7 @@ const Header = () => {
             ? `header px-12 py-3 bg-white-100 relative z-20 ${
                 isScrolled ? "scrolled" : ""
               }`
-            : `header px-12 py-3 bg-white-100 relative z-20 ${
-                isScrolled ? "scrolled" : ""
-              }`
+            : `header px-12 py-3 relative z-20 ${isScrolled ? "scrolled" : ""}`
         }
       >
         {isHomePage && (
@@ -85,21 +85,21 @@ const Header = () => {
             <div className="uppercase hidden lg:block text-inherit relative z-20">
               <CustomLink
                 className={`${
-                  isScrolled || isHomePage ? "text-white" : "text-primary"
+                  isScrolled || !isHomePage ? "text-primary" : "text-white"
                 }`}
               >
                 Login
               </CustomLink>
               <span
                 className={`${
-                  isScrolled || isHomePage ? "text-white" : "text-primary"
+                  isScrolled || !isHomePage ? "text-primary" : "text-white"
                 }`}
               >
                 /
               </span>
               <CustomLink
                 className={`${
-                  isScrolled || isHomePage ? "text-white" : "text-primary"
+                  isScrolled || !isHomePage ? "text-primary" : "text-white"
                 }`}
               >
                 Register
@@ -107,7 +107,7 @@ const Header = () => {
             </div>
             <div
               className={`icon flex items-center justify-center gap-6 ${
-                isScrolled || isHomePage ? "text-white" : "text-primary"
+                isScrolled || !isHomePage ? "text-primary" : "text-white"
               }`}
             >
               <IoSearchOutline size={23} />
@@ -115,18 +115,14 @@ const Header = () => {
               <div className="relative z-20">
                 <IoHeartOutline size={23} />
                 <div className="absolute -top-2 -right-1.5">
-                  <Badges color={isScrolled ? "hidden" : "bg-primary-green"}>
-                    0
-                  </Badges>
+                  <Badges color="bg-primary-green">0</Badges>
                 </div>
               </div>
 
               <div className="relative z-20">
                 <IoCartOutline size={23} />
                 <div className="absolute -top-2 -right-1.5">
-                  <Badges color={isScrolled ? "hidden" : "bg-primary-green"}>
-                    0
-                  </Badges>
+                  <Badges color="bg-primary-green">0</Badges>
                 </div>
               </div>
 
@@ -153,7 +149,9 @@ const Header = () => {
           >
             {menulists.map((list) => (
               <li key={list.id} className="uppercase list-none">
-                <CustomNavLink href={list.path}>{list.link}</CustomNavLink>
+                <CustomNavLink href={list.path} className="text-white">
+                  {list.link}
+                </CustomNavLink>
               </li>
             ))}
           </div>
