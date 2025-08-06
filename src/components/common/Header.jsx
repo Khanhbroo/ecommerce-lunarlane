@@ -62,7 +62,7 @@ const Header = () => {
           <div
             className={`transition-colors duration-300 ${
               isScrolled ? "lg:bg-none" : "lg:bg-black"
-            } lg:h-[88px] lg:absolute lg:top-0 lg:right-0 lg:w-1/3 lg:-z-10`}
+            } lg:h-[84px] lg:absolute lg:top-0 lg:right-0 lg:w-1/3 lg:-z-10`}
           ></div>
         )}
         <nav className="p-4 flex justify-between items-center relative">
@@ -106,20 +106,20 @@ const Header = () => {
               </CustomLink>
             </div>
             <div
-              className={`icon flex items-center justify-center gap-6 ${
-                isScrolled || !isHomePage ? "text-primary" : "text-white"
+              className={`icon flex items-center justify-center gap-6 md:text-primary ${
+                isScrolled || !isHomePage ? "lg:text-primary" : "lg:text-white"
               }`}
             >
-              <IoSearchOutline size={23} />
+              <IoSearchOutline className="hidden md:block" size={23} />
 
-              <div className="relative z-20">
+              <div className="hidden md:block relative z-20">
                 <IoHeartOutline size={23} />
                 <div className="absolute -top-2 -right-1.5">
                   <Badges color="bg-primary-green">0</Badges>
                 </div>
               </div>
 
-              <div className="relative z-20">
+              <div className="hidden md:block relative z-20">
                 <IoCartOutline size={23} />
                 <div className="absolute -top-2 -right-1.5">
                   <Badges color="bg-primary-green">0</Badges>
