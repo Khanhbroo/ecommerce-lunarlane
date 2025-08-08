@@ -77,7 +77,7 @@ export const herolist = [
       },
       {
         color: "green",
-        value: 43.34,
+        value: 143.34,
       },
     ],
     color: [
