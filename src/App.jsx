@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Layout, Home } from "./router";
+import { Layout, Home, Product } from "./router";
 
 const router = createBrowserRouter([
   {
@@ -7,6 +7,7 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <Home />
+        <Product />
       </Layout>
     ),
   },
