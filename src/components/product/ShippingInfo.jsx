@@ -1,6 +1,8 @@
+import { BiChart } from "react-icons/bi";
 import { FaShippingFast } from "react-icons/fa";
 import { FaCircleDollarToSlot } from "react-icons/fa6";
 import { MdOutlineMarkUnreadChatAlt } from "react-icons/md";
+import { BodyOne, Title } from "../common/CustomComponents";
 
 const additionalInfo = [
   {
@@ -26,7 +28,40 @@ const additionalInfo = [
 ];
 
 const ShippingInfo = () => {
-  return <section></section>;
+  return (
+    <>
+      <section className="container">
+        <div className="py-32 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {additionalInfo.map((info) => (
+            <div
+              key={info.id}
+              className="flex flex-col items-center justify-center text-center gap-3"
+            >
+              <div className="text-primary-green">{info.icon}</div>
+              <h3 className="text-xl font-bold mt-4">{info.title}</h3>
+              <p className="mt-2">{info.description}</p>
+            </div>
+          ))}
+        </div>
+        <div className="box bg-primary p-8 flex flex-col lg:flex-row items-center justify-between">
+          <div className="left flex items-center gap-3">
+            <BiChart size={100} className="text-white" />
+            <div>
+              <Title className="text-white leading-none uppercase" level={3}>
+                Subscribe to our newsletter
+              </Title>
+              <BodyOne className="text-gray-300">
+                Get Latest News, Offers, And Discounts.
+              </BodyOne>
+            </div>
+          </div>
+          <div className="left w-full py-5 px-8 lg:w-1/2">
+            <input type="text" className="outline-none w-full p-3" />
+          </div>
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default ShippingInfo;

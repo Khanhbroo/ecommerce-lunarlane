@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import Banner from "./Banner";
 
-function NextArrow(props) {
+const NextArrow = (props) => {
   const { onClick } = props;
   return (
     <div
@@ -18,9 +18,9 @@ function NextArrow(props) {
       </button>
     </div>
   );
-}
+};
 
-function PrevArrow(props) {
+const PrevArrow = (props) => {
   const { onClick } = props;
   return (
     <div
@@ -32,7 +32,7 @@ function PrevArrow(props) {
       </button>
     </div>
   );
-}
+};
 
 const Hero = () => {
   const settings = {

@@ -1,4 +1,10 @@
-import { Hero, Product, ShippingInfo } from "../../router";
+import {
+  Banner,
+  Hero,
+  Product,
+  ShippingInfo,
+  ProductSlide,
+} from "../../router";
 
 const Home = () => {
   return (
@@ -6,6 +12,8 @@ const Home = () => {
       <Hero />
       <Product />
       <ShippingInfo />
+      <Banner />
+      <ProductSlide />
     </>
   );
 };
