@@ -1,9 +1,11 @@
-import { Hero } from "../../router";
+import { Hero, Product, ShippingInfo } from "../../router";
 
 const Home = () => {
   return (
     <>
       <Hero />
+      <Product />
+      <ShippingInfo />
     </>
   );
 };

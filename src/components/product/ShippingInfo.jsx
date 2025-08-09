@@ -1,14 +1,20 @@
+import { FaShippingFast } from "react-icons/fa";
+import { FaCircleDollarToSlot } from "react-icons/fa6";
+import { MdOutlineMarkUnreadChatAlt } from "react-icons/md";
+
 const additionalInfo = [
   {
     id: 1,
     title: "FREE SHIPPING",
-    description: "Enjoy Free Shipping On All Orders - No Minimum Purchase Required.",
+    description:
+      "Enjoy Free Shipping On All Orders - No Minimum Purchase Required.",
     icon: <FaShippingFast size={50} />,
   },
   {
     id: 2,
     title: "24/7 SUPPORT",
-    description: "Our Team Is Available 24/7 To Help With Any Questions Or Concerns.",
+    description:
+      "Our Team Is Available 24/7 To Help With Any Questions Or Concerns.",
     icon: <MdOutlineMarkUnreadChatAlt size={50} />,
   },
   {
@@ -18,3 +24,9 @@ const additionalInfo = [
     icon: <FaCircleDollarToSlot size={50} />,
   },
 ];
+
+const ShippingInfo = () => {
+  return <section></section>;
+};
+
+export default ShippingInfo;
