@@ -6,7 +6,9 @@ const Layout = ({ children }) => {
   return (
     <div className="h-[2000px]">
       <Header />
-      <main style={{ minHeight: "80vh" }}>{children}</main>
+      <main style={{ minHeight: "80vh" }} className="overflow-x-clip">
+        {children}
+      </main>
       <Footer />
     </div>
   );

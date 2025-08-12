@@ -4,19 +4,19 @@ import { BodyOne, Caption, CustomLink, Title } from "./CustomComponents";
 const Footer = () => {
   return (
     <footer className="py-14">
-      <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 gap-x-20">
         <div>
-          <img src={logoImg} alt="Logo Image" className="h-7" />
+          <img src={logoImg} alt="Logo Image" className="h-7 -ml-2" />
           <div className="flex flex-col gap-2 mt-5">
             <Caption>Address: Lunar Lane, Moon</Caption>
             <Caption>Email: khanhdq1120@gmail.com</Caption>
             <Caption>Call: +84 357519498</Caption>
           </div>
           <br />
-          <BodyOne>Subscribe To Our Newsletter</BodyOne>
+          <BodyOne>Subscribe To Our NewsLetter</BodyOne>
           <input
             type="text"
-            className="p-3 w-full border bg-white-100 border-gray-300 outline-none"
+            className="p-3 w-full border bg-white-100 border-gray-300 outline-none truncate"
             placeholder="Enter your email address"
           />
         </div>
