@@ -69,7 +69,7 @@ const ProductCard = ({
         id,
         price: +discountPrice,
         name: title,
-        cover: images,
+        images,
       })
     );
   };
