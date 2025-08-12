@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 import { Title } from "../common/CustomComponents";
 
 const BannerCard = ({ title, desc, cover, className, classSecond }) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="w-full h-full relative">
@@ -20,7 +24,12 @@ const BannerCard = ({ title, desc, cover, className, classSecond }) => {
             <p className="text-lg font-normal leading-none">{desc}</p>
           </div>
           <div className="w-1/2 mt-5">
-            <button className="secondary-btn flex justify-end">Shop now</button>
+            <button
+              className="secondary-btn flex justify-end"
+              onClick={() => navigate("/shop")}
+            >
+              Shop now
+            </button>
           </div>
         </div>
       </div>

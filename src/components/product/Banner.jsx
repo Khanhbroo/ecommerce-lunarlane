@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 import { promotionalInfo } from "../../assets/data/data";
 import { BodyOne, Title } from "../common/CustomComponents";
 
 const Banner = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <section className="flex flex-col lg:flex-row items-center justify-between pt-20">
@@ -21,7 +25,12 @@ const Banner = () => {
                   {info.title}
                 </Title>
                 <BodyOne>{info.description}</BodyOne>
-                <button className="secondary-btn">Shop Now</button>
+                <button
+                  className="secondary-btn"
+                  onClick={() => navigate("/shop")}
+                >
+                  Shop Now
+                </button>
               </div>
             </div>
           </>

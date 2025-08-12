@@ -1,8 +1,8 @@
 import Slider from "react-slick";
-import { herolist } from "../../assets/data/data";
-import HeroItem from "./HeroItem";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { herolist } from "../../assets/data/data";
+import HeroItem from "./HeroItem";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import Banner from "./Banner";
 

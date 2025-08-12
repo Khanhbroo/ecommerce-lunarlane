@@ -1,14 +1,35 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Layout, Home } from "./router";
+import { Layout, Home, Shop, ProductDetails } from "./router";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <Layout>
-        <Home />
-      </Layout>
-    ),
+    children: [
+      {
+        index: true,
+        element: (
+          <Layout>
+            <Home />
+          </Layout>
+        ),
+      },
+      {
+        path: "shop",
+        element: (
+          <Layout>
+            <Shop />
+          </Layout>
+        ),
+      },
+      {
+        path: "product-details/:productId",
+        element: (
+          <Layout>
+            <ProductDetails />
+          </Layout>
+        ),
+      },
+    ],
   },
 ]);
 

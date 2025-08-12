@@ -3,6 +3,8 @@ export { default as Footer } from "../components/common/Footer";
 
 export { default as Home } from "../screen/home/Home";
 export { default as Product } from "../screen/product/Product";
+export { default as Shop } from "../screen/shop/Shop";
+export { default as ProductDetails } from "../screen/product/ProductDetails";
 
 export { default as Hero } from "../components/hero/Hero";
 export { default as Testimonials } from "../components/hero/Testimonials";

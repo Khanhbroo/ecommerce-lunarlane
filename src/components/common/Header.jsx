@@ -9,12 +9,13 @@ import {
   IoSearchOutline,
 } from "react-icons/io5";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const menuRef = useRef(null);
 
   const toggleMenu = () => {
@@ -68,7 +69,14 @@ const Header = () => {
         <nav className="p-4 flex justify-between items-center relative">
           <div className="flex items-center gap-14">
             <div>
-              <img src={logoImg} alt="Logo Image" className="h-7 bg-auto" />
+              <img
+                src={logoImg}
+                alt="Logo Image"
+                className="h-7 bg-auto hover:cursor-pointer"
+                onClick={() => {
+                  navigate("/");
+                }}
+              />
             </div>
             <div className="hidden lg:flex items-center justify-between gap-4">
               {menulists.map((list) => (

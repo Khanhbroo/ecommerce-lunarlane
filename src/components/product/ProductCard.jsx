@@ -178,12 +178,12 @@ const ProductCard = ({
                     </div>
                     <div className="flex items-center gap-3">
                       <Title level={5} className="text-lg">
-                        Share: <span className="font-normal">Wooden</span>
+                        Share:
                       </Title>
-                      <div className="flex items-center -mt-1 gap-3">
-                        <FaFacebookF />
-                        <AiFillInstagram />
-                        <FaTwitter />
+                      <div className="flex items-center -mt-1 -ml-2 gap-3">
+                        <FaFacebookF className="h-6 w-6 p-1 icon-hover" />
+                        <AiFillInstagram className="h-6 w-6 p-1 icon-hover" />
+                        <FaTwitter className="h-6 w-6 p-1 icon-hover" />
                       </div>
                     </div>
                   </div>

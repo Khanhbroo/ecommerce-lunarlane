@@ -61,7 +61,7 @@ const ProductSlideCart = () => {
   };
 
   return (
-    <>
+    <div className="slider-container">
       <Slider {...settings}>
         {productlists.map((product) => (
           <ProductCard
@@ -78,7 +78,7 @@ const ProductSlideCart = () => {
           />
         ))}
       </Slider>
-    </>
+    </div>
   );
 };
 
