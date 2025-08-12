@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 import bgImage from "../assets/common/Frame.png";
 import { BodyOne, Title } from "../components/common/CustomComponents";
@@ -11,6 +12,10 @@ const CartPage = () => {
     state.cart.itemList.reduce((total, item) => total + item.totalPrice, 0)
   );
   const cartItems = useSelector((state) => state.cart.itemList);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

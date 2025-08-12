@@ -159,8 +159,8 @@ const ProductCard = ({
             onClick={handleCloseModal}
           >
             <div
-              className={`modal-overlay -translate-y-20 duration-[500ms] ${
-                isModalVisible ? "-translate-y-0" : ""
+              className={`modal-overlay duration-[500ms] ${
+                isModalVisible ? "-translate-y-0" : "-translate-y-20"
               }`}
               onClick={handleCloseModal}
             >
@@ -207,7 +207,10 @@ const ProductCard = ({
                       value="1"
                       className="w-12 h-12 text-primary outline-none border-2 border-primary px-4"
                     />
-                    <button className="primary-btn uppercase">
+                    <button
+                      className="primary-btn uppercase"
+                      onClick={handleAddToCart}
+                    >
                       Add to cart
                     </button>
                   </div>
