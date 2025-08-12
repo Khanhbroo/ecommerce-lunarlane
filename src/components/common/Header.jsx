@@ -2,14 +2,11 @@ import { useEffect, useRef, useState } from "react";
 
 import logoImg from "../../assets/common/logo.png";
 import { menulists } from "../../assets/data/data";
-import { CustomNavLink, CustomLink, Badges } from "./CustomComponents";
-import {
-  IoCartOutline,
-  IoHeartOutline,
-  IoSearchOutline,
-} from "react-icons/io5";
+import { CustomNavLink, CustomLink } from "./CustomComponents";
+import { IoSearchOutline } from "react-icons/io5";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useLocation, useNavigate } from "react-router-dom";
+import ModalCart from "../cart/ModelCart";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,7 +69,7 @@ const Header = () => {
               <img
                 src={logoImg}
                 alt="Logo Image"
-                className="h-7 bg-auto hover:cursor-pointer"
+                className="h-7 bg-contain hover:cursor-pointer object-contain"
                 onClick={() => {
                   navigate("/");
                 }}
@@ -118,21 +115,12 @@ const Header = () => {
                 isScrolled || !isHomePage ? "lg:text-primary" : "lg:text-white"
               }`}
             >
-              <IoSearchOutline className="hidden md:block" size={23} />
+              <IoSearchOutline
+                className="hidden md:block cursor-pointer"
+                size={23}
+              />
 
-              <div className="hidden md:block relative z-20">
-                <IoHeartOutline size={23} />
-                <div className="absolute -top-2 -right-1.5">
-                  <Badges color="bg-primary-green">0</Badges>
-                </div>
-              </div>
-
-              <div className="hidden md:block relative z-20">
-                <IoCartOutline size={23} />
-                <div className="absolute -top-2 -right-1.5">
-                  <Badges color="bg-primary-green">0</Badges>
-                </div>
-              </div>
+              <ModalCart />
 
               <button
                 onClick={toggleMenu}

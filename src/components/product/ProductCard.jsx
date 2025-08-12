@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
 
 import { IoMdHeart } from "react-icons/io";
 import { IoCart, IoClose } from "react-icons/io5";
@@ -12,6 +13,8 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
+import { cartActions } from "../../redux/slice/cartSlice";
+import { createPortal } from "react-dom";
 
 export const RenderRatingStars = (rating) => {
   const totalStars = 5;
@@ -43,7 +46,9 @@ const ProductCard = ({
   featured,
   color,
 }) => {
+  const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(true);
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -52,6 +57,36 @@ const ProductCard = ({
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+
+  const discountPrice = (
+    price[0].value -
+    (price[0].value * discount) / 100
+  ).toFixed(2);
+
+  const handleAddToCart = () => {
+    dispatch(
+      cartActions.addToCart({
+        id,
+        price: +discountPrice,
+        name: title,
+        cover: images,
+      })
+    );
+  };
+
+  useEffect(() => {
+    let timer;
+    if (isModalOpen) {
+      timer = setTimeout(() => {
+        setIsModalVisible(true);
+      }, 100);
+    }
+
+    return () => {
+      clearTimeout(timer);
+      setIsModalVisible(false);
+    };
+  }, [isModalOpen]);
 
   return (
     <>
@@ -78,7 +113,10 @@ const ProductCard = ({
             >
               Quick View
             </button>
-            <button className="add-to-cart-btn product-btn primary-btn">
+            <button
+              className="add-to-cart-btn product-btn primary-btn"
+              onClick={handleAddToCart}
+            >
               <IoCart size={23} />
             </button>
             <button className="love-btn product-btn primary-btn">
@@ -112,10 +150,20 @@ const ProductCard = ({
         </div>
       </div>
 
-      {isModalOpen && (
-        <>
-          <div className="overlay-bg" onClick={handleCloseModal}>
-            <div className="modal-overlay" onClick={handleCloseModal}>
+      {isModalOpen &&
+        createPortal(
+          <div
+            className={`overlay-bg transition-all duration-200 opacity-0 ${
+              isModalVisible ? "opacity-100" : ""
+            }`}
+            onClick={handleCloseModal}
+          >
+            <div
+              className={`modal-overlay -translate-y-20 duration-[500ms] ${
+                isModalVisible ? "-translate-y-0" : ""
+              }`}
+              onClick={handleCloseModal}
+            >
               <div
                 className="modal-content flex justify-between"
                 onClick={(event) => event.stopPropagation()}
@@ -197,9 +245,9 @@ const ProductCard = ({
                 </div>
               </div>
             </div>
-          </div>
-        </>
-      )}
+          </div>,
+          document.body
+        )}
     </>
   );
 };

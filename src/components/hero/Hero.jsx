@@ -50,6 +50,13 @@ const Hero = () => {
           prevArrow: <></>,
         },
       },
+      {
+        breakpoint: 768,
+        settings: {
+          nextArrow: <></>,
+          prevArrow: <></>,
+        },
+      },
     ],
   };
 

@@ -64,18 +64,20 @@ const ProductSlideCart = () => {
     <div className="slider-container">
       <Slider {...settings}>
         {productlists.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            title={product.title}
-            description={product.description}
-            images={product.images}
-            price={product.price}
-            discount={product.discount}
-            rating={product.rating}
-            featured={product.featured}
-            color={product.color}
-          />
+          <>
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              title={product.title}
+              description={product.description}
+              images={product.images}
+              price={product.price}
+              discount={product.discount}
+              rating={product.rating}
+              featured={product.featured}
+              color={product.color}
+            />
+          </>
         ))}
       </Slider>
     </div>
