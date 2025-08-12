@@ -3,6 +3,8 @@ import { useState } from "react";
 
 import { IoCartOutline, IoCloseOutline, IoHeartOutline } from "react-icons/io5";
 import { Badges, BodyOne, Title } from "../common/CustomComponents";
+import { cartActions } from "../../redux/slice/cartSlice";
+import { NavLink } from "react-router-dom";
 
 const ModalCart = () => {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
@@ -17,15 +19,17 @@ const ModalCart = () => {
 
   const handleOpenModal = () => {
     setIsOpen(true);
+    setIsClosing(false);
     document.body.style.overflowX = "hidden";
   };
 
   const handleCloseModal = () => {
     setIsOpen(true);
+    setIsClosing(true);
+
     document.body.style.overflowX = "auto";
     const timeOut = setTimeout(() => {
       setIsOpen(false);
-      setIsClosing(true);
     }, 300);
   };
 
@@ -58,7 +62,11 @@ const ModalCart = () => {
       {isOpen && (
         <>
           <div className="cartoverlay" onClick={handleCloseModal}></div>
-          <div className={`cartmodel p-16 text-primary `}>
+          <div
+            className={`cartmodel p-16 text-primary ${
+              isClosing ? "closing" : ""
+            }`}
+          >
             <div className="flex justify-between gap-5">
               <button
                 className={`flex items-center gap-2 font-medium ${
@@ -90,10 +98,11 @@ const ModalCart = () => {
               ></div>
             </div>
             {activeTab === "cart" ? (
-              <div className="cart-items">
+              <>
                 {cartItems.map((item) => (
                   <CardProduct
                     key={item.id}
+                    id={item.id}
                     cover={item.cover}
                     name={item.name}
                     price={item.price}
@@ -105,9 +114,15 @@ const ModalCart = () => {
                   <Title level={6}>{totalItemsPrice.toFixed(2)}</Title>
                 </div>
                 <div className="checkout">
-                  <button className="primary-btn w-full mt-2">View Cart</button>
+                  <NavLink
+                    to="/cart"
+                    className="primary-btn w-full mt-2"
+                    onClick={handleCloseModal}
+                  >
+                    View Cart
+                  </NavLink>
                 </div>
-              </div>
+              </>
             ) : (
               <></>
             )}
@@ -123,7 +138,9 @@ export default ModalCart;
 export const CardProduct = ({ id, cover, name, price, quantity }) => {
   const dispatch = useDispatch();
 
-  const handleRemoveFromCart = () => {};
+  const handleRemoveAllFromCart = () => {
+    dispatch(cartActions.removeAllFromCart(id));
+  };
 
   return (
     <>
@@ -146,7 +163,7 @@ export const CardProduct = ({ id, cover, name, price, quantity }) => {
             </p>
           </div>
           <button className="w-10 h-10 bg-gray-200 flex items-center justify-center rounded-full text-primary">
-            <IoCloseOutline size={25} onClick={handleRemoveFromCart} />
+            <IoCloseOutline size={25} onClick={handleRemoveAllFromCart} />
           </button>
         </div>
       </div>

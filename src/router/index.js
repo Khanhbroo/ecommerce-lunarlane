@@ -1,6 +1,7 @@
 export { default as Layout } from "../components/common/Layout";
 export { default as Footer } from "../components/common/Footer";
 
+export { default as CartPage } from "../screen/CartPage";
 export { default as Home } from "../screen/home/Home";
 export { default as Product } from "../screen/product/Product";
 export { default as Shop } from "../screen/shop/Shop";
