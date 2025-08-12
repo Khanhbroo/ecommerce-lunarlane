@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Header from "./Header";
 import PropTypes from "prop-types";
 
@@ -6,7 +7,7 @@ const Layout = ({ children }) => {
     <div className="h-[2000px]">
       <Header />
       <main style={{ minHeight: "80vh" }}>{children}</main>
-      <h2>Footer</h2>
+      <Footer />
     </div>
   );
 };

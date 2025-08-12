@@ -10,7 +10,7 @@ const NextArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="absolute bottom-0 left-96 lg:left-1/2 slider-btn"
+      className="absolute bottom-0 left-96  lg:left-1/2 slider-btn"
       onClick={onClick}
     >
       <button className="next">
@@ -42,6 +42,15 @@ const Hero = () => {
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          nextArrow: <></>,
+          prevArrow: <></>,
+        },
+      },
+    ],
   };
 
   return (

@@ -32,6 +32,7 @@ const PrevArrow = (props) => {
     </div>
   );
 };
+
 const ProductSlideCart = () => {
   const settings = {
     dots: false,
