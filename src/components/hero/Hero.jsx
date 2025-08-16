@@ -10,7 +10,7 @@ const NextArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="absolute bottom-0 left-96  lg:left-1/2 slider-btn"
+      className="hidden md:block absolute bottom-0 left-[50.1%] slider-btn"
       onClick={onClick}
     >
       <button className="next">
@@ -24,7 +24,7 @@ const PrevArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="absolute bottom-0 bg-white text-primary right-96 lg:left-[46.5%] slider-btn z-10"
+      className="hidden md:block absolute bottom-0 bg-white text-primary right-[50.1%] slider-btn z-10"
       onClick={onClick}
     >
       <button className="next">
@@ -42,27 +42,11 @@ const Hero = () => {
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    responsive: [
-      {
-        breakpoint: 480,
-        settings: {
-          nextArrow: <></>,
-          prevArrow: <></>,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          nextArrow: <></>,
-          prevArrow: <></>,
-        },
-      },
-    ],
   };
 
   return (
     <div>
-      <section className="h-[50vh] lg:h-[90vh] mt-20 bg-white-100 relative z-1">
+      <section className="h-auto md:h-[50vh] lg:h-[90vh] mt-20 bg-white-100 relative z-1">
         <Slider {...settings}>
           {herolist.map((item) => (
             <HeroItem

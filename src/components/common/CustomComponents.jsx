@@ -17,20 +17,24 @@ const Title = ({ level, children, className }) => {
       : "text-[18px] font-[500] text-primary"
   }`;
 
-  return <Heading className={`${className} ${classes}`}>{children}</Heading>;
+  return <Heading className={`${classes} ${className}`}>{children}</Heading>;
 };
 
 const BodyOne = ({ children, className }) => {
   const classes = "text-lg font-normal text-primary-gray mb-4";
-  return <p className={`${className} ${classes}`}>{children}</p>;
+  return <p className={`${classes} ${className}`}>{children}</p>;
 };
 
 const BodyTwo = ({ children }) => {
   return <p className="text-base font-semibold text-white">{children}</p>;
 };
 
-const Caption = ({ children }) => {
-  return <p className="text-sm font-normal text-primary-gray">{children}</p>;
+const Caption = ({ children, className }) => {
+  return (
+    <p className={`text-sm font-normal text-primary-gray ${className}`}>
+      {children}
+    </p>
+  );
 };
 
 const Span = ({ children }) => {
@@ -105,6 +109,7 @@ BodyTwo.propTypes = {
 };
 Caption.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.node,
 };
 Span.propTypes = {
   children: PropTypes.node.isRequired,

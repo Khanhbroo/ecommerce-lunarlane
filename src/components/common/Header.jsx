@@ -123,8 +123,8 @@ const Header = () => {
               <ModalCart />
 
               <button
-                onClick={toggleMenu}
                 className="lg:hidden w-10 h-10 flex justify-center items-center bg-black text-white focus:outline-none"
+                onClick={toggleMenu}
               >
                 {isOpen ? (
                   <AiOutlineClose size={24} />
@@ -135,7 +135,7 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Responsive menu if below 768px */}
+          {/* Responsive menu if below 1024px */}
 
           <div
             ref={menuRef}
@@ -144,7 +144,11 @@ const Header = () => {
             }`}
           >
             {menulists.map((list) => (
-              <li key={list.id} className="uppercase list-none">
+              <li
+                key={list.id}
+                className="uppercase list-none"
+                onClick={toggleMenu}
+              >
                 <CustomNavLink href={list.path} className="text-white">
                   {list.link}
                 </CustomNavLink>

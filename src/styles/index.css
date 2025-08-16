@@ -121,6 +121,11 @@ body {
   opacity: 1;
 }
 
+.btn-small {
+  font-size: 12px !important;
+  padding: 12px 38px;
+}
+
 /*    Navbar   */
 .menu-container {
   background-color: #24262b;
