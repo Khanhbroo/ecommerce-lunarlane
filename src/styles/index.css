@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -252,7 +256,6 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 25%;
   height: 100vh;
   background-color: white;
   z-index: 1000000 !important;

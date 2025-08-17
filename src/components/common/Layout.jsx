@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const Layout = ({ children }) => {
   return (
-    <div className="h-[2000px]">
+    <div>
       <Header />
       <main style={{ minHeight: "80vh" }} className="overflow-x-clip">
         {children}

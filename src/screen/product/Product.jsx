@@ -4,7 +4,7 @@ import ProductCard from "../../components/product/ProductCard";
 
 const Product = () => {
   return (
-    <div>
+    <div id="product-details" className="product-details">
       <section className="py-20 bg-white-100">
         <div className="container">
           <Title level={4}>Most Popular Products</Title>

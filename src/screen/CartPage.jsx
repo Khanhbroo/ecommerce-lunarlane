@@ -19,8 +19,8 @@ const CartPage = () => {
 
   return (
     <>
-      <section className="mt-16">
-        <div className="h-[50vh]">
+      <section className="md:block mt-24 md:mt-16">
+        <div className="hidden md:block h-[50vh]">
           <div className="images absolute top-0 left-0 w-full h-1/2">
             <img
               src={bgImage}
@@ -28,12 +28,12 @@ const CartPage = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="text absolute top-48 left-[45%]">
+          <div className="absolute top-48 left-[45%]">
             <Title level={1}>Cart</Title>
           </div>
         </div>
-        <div className="container flex justify-between">
-          <div className="w-2/3">
+        <div className="container lg:flex justify-between">
+          <div className="w-full lg:w-2/3">
             <div className="relative overflow-x-auto sm:rounded-lg">
               <table>
                 <thead className="text-xs text-primary uppercase bg-gray-50">
@@ -72,33 +72,44 @@ const CartPage = () => {
               </table>
             </div>
           </div>
-          <div className="w-2/6 ml-16">
+          <div className="lg:w-2/6 md:ml-16 mt-4 lg:mt-0">
             <div className="bg-gray-100 p-5">
-              <p className="text-lg font-medium text-primary">Cart Totals</p>
+              <p className="text-center md:text-2xl lg:text-lg font-medium text-primary">
+                Cart Totals
+              </p>
               <hr className="my-2 h-[2px] bg-gray-200" />
-              <div className="text-lg font-medium text-primary flex items-center gap-5">
+              <div className="text-sm md:text-xl lg:text-lg font-medium text-primary flex items-center gap-5">
                 <p className="w-32">Subtotal</p>
-                <p className="text-sm font-normal">
+                <p className="sm:text-[12px] md:text-xl leading-none lg:leading-normal lg:text-lg font-normal">
                   ${totalItemsPrice.toFixed(2)}
                 </p>
               </div>
               <hr className="my-3 h-[2px] bg-gray-200" />
-              <div className="text-lg font-medium text-primary flex items-center gap-5">
-                <p className="w-32">Shipping</p>
-                <p className="text-sm font-normal">
+              <div className="text-sm md:text-xl lg:text-lg font-medium text-primary flex items-center gap-5">
+                <p className="w-44">Shipping</p>
+                <p className="sm:text-[12px] md:text-xl leading-none lg:leading-normal lg:text-lg font-normal">
                   Enter your address to view shipping options.
                 </p>
               </div>
               <hr className="my-3 h-[2px] bg-gray-200" />
-              <div className="text-lg font-medium text-primary flex items-center gap-5">
+              <div className="text-sm md:text-xl lg:text-lg font-medium text-primary flex items-center gap-5">
                 <p className="w-32">Total</p>
-                <p className="text-sm font-normal">
+                <p className="sm:text-[12px] md:text-xl leading-none lg:leading-normal lg:text-lg font-normal">
                   ${totalItemsPrice.toFixed(2)}
                 </p>
               </div>
               <hr className="my-3 h-[2px] bg-gray-200" />
 
-              <button className="primary-btn mt-5">Proceed To Checkout</button>
+              <div className="hidden lg:flex justify-center">
+                <button className="primary-btn mt-5">
+                  Proceed To Checkout
+                </button>
+              </div>
+              <div className="flex justify-center lg:hidden">
+                <button className="border bg-black text-white sm:text-[16px] md:text-xl py-4 px-6 rounded-[5px] mt-5">
+                  Proceed To Checkout
+                </button>
+              </div>
             </div>
           </div>
         </div>

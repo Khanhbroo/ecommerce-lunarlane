@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import PropTypes from "prop-types";
 import { BodyOne, Caption, Title } from "../common/CustomComponents";
 
 const HeroItem = ({ title, description, prices, colors, image }) => {
+  const navigate = useNavigate();
+
   const [selectedColor, setSelectedColor] = useState(colors[0].value);
   const [selectedPrice, setSelectedPrice] = useState(
     prices.find((price) => price.color === colors[0].value)
@@ -52,8 +55,15 @@ const HeroItem = ({ title, description, prices, colors, image }) => {
               </div>
             </div>
             <div className="flex items-center gap-8">
-              <button className="primary-btn uppercase">View details</button>
-              <button className="secondary-btn uppercase">View shops</button>
+              <a href="#product-details" className="primary-btn uppercase">
+                View details
+              </a>
+              <button
+                className="secondary-btn uppercase"
+                onClick={() => navigate("/shop")}
+              >
+                View shops
+              </button>
             </div>
           </div>
           <div className="right bg-white p-5 w-1/2 h-full flex justify-center items-center">
@@ -84,7 +94,7 @@ const HeroItem = ({ title, description, prices, colors, image }) => {
               </Title>
               <BodyOne className="mt-3 text-sm">{description}</BodyOne>
             </div>
-            <div className="flex justify-center bg-slate-400 py-2">
+            <div className="flex justify-center bg-white-100 py-2">
               <table>
                 <thead>
                   <tr className="flex gap-[96px] mb-2">
@@ -115,10 +125,16 @@ const HeroItem = ({ title, description, prices, colors, image }) => {
               </table>
             </div>
             <div className="flex items-center justify-between mt-8">
-              <button className="primary-btn uppercase btn-small">
+              <a
+                href="#product-details"
+                className="primary-btn uppercase btn-small"
+              >
                 View details
-              </button>
-              <button className="secondary-btn uppercase btn-small">
+              </a>
+              <button
+                className="secondary-btn uppercase btn-small"
+                onClick={() => navigate("/shop")}
+              >
                 View shops
               </button>
             </div>

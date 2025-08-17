@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { productlists } from "../../assets/data/data";
@@ -35,6 +35,10 @@ const colorsValue = {
 
 const ProductDetails = () => {
   const { productId } = useParams();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const product = productlists.find((item) => item.id === parseInt(productId));
 

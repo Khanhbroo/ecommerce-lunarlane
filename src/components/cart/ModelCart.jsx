@@ -63,7 +63,7 @@ const ModalCart = () => {
         <>
           <div className="cartoverlay" onClick={handleCloseModal}></div>
           <div
-            className={`cartmodel p-16 text-primary ${
+            className={`cartmodel w-[75%] md:w-auto p-16 text-primary ${
               isClosing ? "closing" : ""
             }`}
           >
