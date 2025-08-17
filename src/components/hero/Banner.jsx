@@ -13,14 +13,14 @@ const Banner = () => {
         </div>
         <div className="flex flex-col justify-between gap-8">
           <BannerCard
-            title="Wooden Water Bottles"
-            desc="UP TO 60% OFF"
+            title="Wooden Brush Teeth"
+            desc="UP TO 50% OFF"
             cover="./images/hero/product2.png"
             className
           />
           <BannerCard
-            title="Wooden Water Bottles"
-            desc="UP TO 60% OFF"
+            title="Fabric Handbags"
+            desc="UP TO 40% OFF"
             cover="./images/hero/product3.png"
             className
             classSecond

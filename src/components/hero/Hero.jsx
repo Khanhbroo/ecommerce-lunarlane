@@ -10,7 +10,7 @@ const NextArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="hidden md:block absolute bottom-0 left-[50.1%] slider-btn"
+      className="hidden md:flex md:items-center absolute bottom-0 left-[50.1%] slider-btn"
       onClick={onClick}
     >
       <button className="next">
@@ -24,7 +24,7 @@ const PrevArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="hidden md:block absolute bottom-0 bg-white text-primary right-[50.1%] slider-btn z-10"
+      className="hidden md:flex md:items-center absolute bottom-0 bg-white text-primary right-[50.1%] slider-btn z-10"
       onClick={onClick}
     >
       <button className="next">

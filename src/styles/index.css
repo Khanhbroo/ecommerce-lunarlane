@@ -122,8 +122,13 @@ body {
 }
 
 .btn-small {
-  font-size: 12px !important;
+  font-size: 12px;
   padding: 12px 38px;
+}
+
+.secondary-btn-small {
+  font-size: 14px;
+  padding: 8px;
 }
 
 /*    Navbar   */
