@@ -50,7 +50,7 @@ const ModalCart = () => {
       </div>
 
       <div
-        className="hidden md:block relative z-20 cursor-pointer"
+        className="block relative z-20 cursor-pointer"
         onClick={handleOpenModal}
       >
         <IoCartOutline size={23} />

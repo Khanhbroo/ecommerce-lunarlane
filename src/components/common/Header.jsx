@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 
 import logoImg from "../../assets/common/logo.png";
 import { menulists } from "../../assets/data/data";
-import { CustomNavLink, CustomLink } from "./CustomComponents";
-import { IoSearchOutline } from "react-icons/io5";
+import { CustomNavLink, CustomLink, Badges } from "./CustomComponents";
+import { IoCartOutline, IoSearchOutline } from "react-icons/io5";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useLocation, useNavigate } from "react-router-dom";
 import ModalCart from "../cart/ModelCart";

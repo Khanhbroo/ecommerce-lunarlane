@@ -43,7 +43,7 @@ const ProductSlideCart = () => {
     prevArrow: <PrevArrow />,
     responsive: [
       {
-        breakpoint: 800,
+        breakpoint: 1000,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
