@@ -19,9 +19,23 @@ const Banner = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute top-0 left-0 p-3 md:p-8 lg:w-2/3">
+              <div className="hidden md:block absolute top-0 left-0 p-3 md:p-8 lg:w-2/3">
                 <span className="bg-white px-6 py-2 text-sm">{info.title}</span>
                 <Title level={2} className="my-5">
+                  {info.title}
+                </Title>
+                <BodyOne>{info.description}</BodyOne>
+                <button
+                  className="secondary-btn"
+                  onClick={() => navigate("/shop")}
+                >
+                  Shop Now
+                </button>
+              </div>
+              {/* Mobile */}
+              <div className="block sm:hidden absolute top-0 left-0 p-3 md:p-8 lg:w-2/3">
+                <span className="bg-white px-6 py-2 text-sm">{info.title}</span>
+                <Title level={4} className="my-5">
                   {info.title}
                 </Title>
                 <BodyOne>{info.description}</BodyOne>
