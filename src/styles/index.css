@@ -28,7 +28,7 @@ body {
     @apply px-4 py-2 bg-primary text-white text-xs font-semibold;
   }
   .feature-btn {
-    @apply px-4 py-2 bg-primary-green text-white text-xs font-semibold;
+    @apply px-4 py-2 bg-primary-green text-white text-[10px] md:text-xs font-semibold;
   }
   .slider-btn {
     @apply w-16 h-16 bg-primary text-white flex items-center justify-center;
@@ -202,10 +202,6 @@ body {
 /*  modal-overlay */
 .modal-overlay {
   position: fixed;
-  top: 25%;
-  left: 25%;
-  width: 50%;
-  height: 500px;
   background-color: white;
   z-index: 50001;
 }

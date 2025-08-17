@@ -159,16 +159,16 @@ const ProductCard = ({
             onClick={handleCloseModal}
           >
             <div
-              className={`modal-overlay duration-[500ms] ${
+              className={`modal-overlay top-[8%] lg:top-[25%] left-[12.5%] lg:left-[25%] w-[75%] lg:w-[50%] duration-[500ms] ${
                 isModalVisible ? "-translate-y-0" : "-translate-y-20"
               }`}
               onClick={handleCloseModal}
             >
               <div
-                className="modal-content flex justify-between"
+                className="modal-content flex flex-col lg:flex-row justify-between"
                 onClick={(event) => event.stopPropagation()}
               >
-                <div className="w-1/2 h-[500px] overflow-hidden">
+                <div className="w-full object-contain lg:w-1/2 lg:h-[500px] overflow-hidden">
                   {images.slice(0, 1).map((cover, index) => (
                     <img
                       key={index}
@@ -178,8 +178,8 @@ const ProductCard = ({
                     />
                   ))}
                 </div>
-                <div className="modal-details w-1/2 h-[500px] overflow-y-scroll p-9">
-                  <button className="feature-btn bg-indigo-500">
+                <div className="modal-details overflow-hidden w-full h-[400px] lg:w-1/2  lg:h-[500px] overflow-y-scroll p-2 md:p-9">
+                  <button className="feature-btn bg-indigo-500 ">
                     SALE {discount}% OFF
                   </button>
                   <Title level={2}>{title}</Title>
