@@ -8,7 +8,7 @@ const NextArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="absolute bottom-0 right-0 bg-white text-primary rounded-full slider-btn"
+      className="hidden md:flex items-center absolute -bottom-[80%] right-[20%] lg:bottom-0 lg:right-0 bg-white text-primary rounded-full slider-btn"
       onClick={onClick}
     >
       <button className="next">
@@ -22,7 +22,7 @@ const PrevArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="absolute bottom-0 right-20 bg-white text-primary rounded-full slider-btn z-10"
+      className="hidden md:flex absolute -bottom-[80%] right-[40%] lg:bottom-0 lg:right-20 bg-white text-primary rounded-full slider-btn z-10"
       onClick={onClick}
     >
       <button className="next">
@@ -44,17 +44,17 @@ const Testimonials = () => {
 
   return (
     <>
-      <section className="testimonials">
+      <section className="testimonials py-2 md:py-0">
         <div className="container h-full flex items-center justify-center">
-          <div className="w-1/2 flex relative z-50">
+          <div className="hidden w-1/2 md:flex relative z-50">
             <div className="box w-96 h-96 bg-white rounded-full z-50">
               <img
                 src="../images/hero/girl.png"
                 alt="Girl smiling"
-                className="absolute -top-[130px] left-0 z-10 rounded-full"
+                className="absolute -top-[26%] left-[3%] lg:-top-[40%] lg:left-0 z-10 rounded-full"
               />
             </div>
-            <div className="bg-[rgba(255,255,255,0.5)] px-5 backdrop-blur-sm p-3 rounded-lg absolute top-36 right-60 z-50">
+            <div className="bg-[rgba(255,255,255,0.5)] px-5 backdrop-blur-sm p-3 rounded-lg absolute top-[40%] right-[25%] lg:top-[40%] lg:right-[60%] z-50">
               <BodyOne className="leading-none">Our Satisfied User</BodyOne>
               <div className="flex items-center">
                 <img
@@ -73,8 +73,10 @@ const Testimonials = () => {
               </div>
             </div>
           </div>
-          <div className="left w-1/2 relative z-50">
-            <Title level={2}>What our clients say about us</Title>
+          <div className="left w-full md:w-1/2 relative z-50">
+            <Title level={2} className="text-[20px] md:text-[40px]">
+              What our clients say about us
+            </Title>
             <BodyOne className="mb-8">
               From the moment I ordered to delivery, everything was smooth and
               professional. The furniture&apos;s quality exceeded my
@@ -82,18 +84,20 @@ const Testimonials = () => {
               customer service and fast shipping. I&apos;ll definitely shop here
               again!
             </BodyOne>
-            <Slider {...settings}>
-              <TestimonialsCard
-                name="Kenneth Fung"
-                post="Undergraduate Student"
-                cover="../images/testimonial/pic5.jpg"
-              />
-              <TestimonialsCard
-                name="Joe Smith"
-                post="Postgraduate Student"
-                cover="../images/testimonial/pic6.jpg"
-              />
-            </Slider>
+            <div>
+              <Slider {...settings}>
+                <TestimonialsCard
+                  name="Kenneth Fung"
+                  post="Undergraduate Student"
+                  cover="../images/testimonial/pic5.jpg"
+                />
+                <TestimonialsCard
+                  name="Joe Smith"
+                  post="Postgraduate Student"
+                  cover="../images/testimonial/pic6.jpg"
+                />
+              </Slider>
+            </div>
           </div>
         </div>
       </section>
